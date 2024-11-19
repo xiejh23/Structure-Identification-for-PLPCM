@@ -22,8 +22,8 @@ function [X,y,y_true] = DGP(n,p,SNR,alpha,v)
     x3 = X(:,11:p);
     b = [1 1 1 1 1]';
     for i=1:n 
-%         f1(i,1)=4*(x1(i,:)-1/2)*Q*(x1(i,:)-1/2)';
-        f1 = 4./(1+exp(-x1*b));
+        f1(i,1)=4*(x1(i,:)-1/2)*Q*(x1(i,:)-1/2)';
+%         f1 = 4./(1+exp(-x1*b));
     end
     f = -f1+ x2*b;
     s1=sqrt(var(f))/SNR;
