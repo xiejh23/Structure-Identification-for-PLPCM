@@ -7,7 +7,7 @@ function [MSE_cnls2,vec_lin,vec_con] = cnls_procedure2(X,y,y_true)
         %%
     % step 1: classify linear and concave variables
 
-    lambda=log(p*n)/(n^0.5)*0.005;
+    lambda=log(p*n)/(n^0.5)*0.5;
     ind=1:p;
     [beta1,yhat1,dd,cc] = cnlslasso_alterform_blockQPFn1(X,y,lambda);
     dd2=dd(2:n-1,:);
@@ -27,7 +27,7 @@ function [MSE_cnls2,vec_lin,vec_con] = cnls_procedure2(X,y,y_true)
     
         %%
     % step 2: zero irrelative variables out
-    lambda=log(p*n)/(n^0.5)*0.05;
+    lambda=log(p*n)/(n^0.5)*0.5;
     X_nonlin=X(:,ind_con);
     X_lin=X(:,ind_lin);
 
