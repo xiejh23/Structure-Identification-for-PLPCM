@@ -11,8 +11,8 @@ num_correctCL=sum(matrix1(:,1:10),2)+sum(matrix2(:,1:10),2);% number of correctl
 num_irr=p-num_CL; % number of irrelevant variables
 num_correctirr=p-10-sum(matrix1(:,11:p),2)-sum(matrix2(:,11:p),2);
 num_LCto0=10-num_correctCL;
-num_LtoC=sum(matrix1(:,1:5),2);
-num_CtoL=sum(matrix2(:,6:10),2);
+num_CtoL=sum(matrix1(:,1:5),2);
+num_LtoC=sum(matrix2(:,6:10),2);
 
 
 
